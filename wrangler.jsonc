@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "supadb",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "supatraxx-db",
+          "database_id": "24d0739d-d170-419b-a022-7ad17f2eaaf9"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "ca1698a45f26408ab85b151d86b66501",
+            "binding": "SECRET",
+            "secret_name": "cloudfare"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
